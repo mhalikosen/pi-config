@@ -1,7 +1,7 @@
 # pi-config
 
 Personal reference of the diff applied to [pi coding agent](https://pi.dev)
-beyond its defaults. Not a starter template, not a turnkey installer — just
+beyond its defaults. Not a starter template, not a turnkey installer: just
 the exact knobs I changed, the extensions I wrote, and the npm packages I
 install on top of a clean `pi` setup.
 
@@ -52,10 +52,10 @@ TypeScript extensions I wrote. They live at `~/.pi/agent/extensions/` and are
 auto-loaded by pi on startup. Each one is a self-contained `default export`
 function that calls `pi.on(...)` or `pi.registerCommand(...)`.
 
-- **`exit-on-text.ts`** — Treats literal `exit` or `quit` in the editor as a
+- **`exit-on-text.ts`**: Treats literal `exit` or `quit` in the editor as a
   REPL-style shutdown. Hooks the `input` event so the LLM is never called
   for that input.
-- **`minimax-usage.ts`** — Polls the MiniMax Coding Plan `/remains` endpoint
+- **`minimax-usage.ts`**: Polls the MiniMax Coding Plan `/remains` endpoint
   every 5 minutes and surfaces a low-quota warning in the status bar
   (`minimax 5h:75%(2h13m) · wk:20%(4d3h)`). Also exposes `/minimax-usage` to
   show a detailed quota panel on demand. Reads the API key from
@@ -63,12 +63,12 @@ function that calls `pi.on(...)` or `pi.registerCommand(...)`.
 
 ## What is NOT in this repo
 
-- **`auth.json`** — Holds the actual API key. Never committed.
-- **`sessions/`** — Conversation logs, can contain personal data.
-- **`npm/`** — `node_modules` for the installed packages, ~285 MB, regenerated
+- **`auth.json`**: Holds the actual API key. Never committed.
+- **`sessions/`**: Conversation logs, can contain personal data.
+- **`npm/`**: `node_modules` for the installed packages, ~285 MB, regenerated
   from `packages.json` on first run.
-- **`bin/fd`, `bin/rg`** — Pre-built arm64 binaries, machine-specific.
-- **`trust.json`** — Per-machine trust decisions for project directories.
+- **`bin/fd`, `bin/rg`**: Pre-built arm64 binaries, machine-specific.
+- **`trust.json`**: Per-machine trust decisions for project directories.
 
 ## Status
 

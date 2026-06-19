@@ -1,0 +1,17 @@
+{
+  "defaultProvider": "minimax",
+  "defaultModel": "MiniMax-M3",
+  "defaultThinkingLevel": "high",
+  "theme": "light",
+  "packages": [
+    "npm:pi-web-access",
+    "npm:@sinamtz/pi-minimax-provider"
+  ],
+  "hideThinkingBlock": true,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "warnings": {
+    "anthropicExtraUsage": false
+  }
+}

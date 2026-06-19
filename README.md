@@ -60,17 +60,3 @@ function that calls `pi.on(...)` or `pi.registerCommand(...)`.
   (`minimax 5h:75%(2h13m) · wk:20%(4d3h)`). Also exposes `/minimax-usage` to
   show a detailed quota panel on demand. Reads the API key from
   `~/.pi/agent/auth.json` first, then falls back to `MINIMAX_API_KEY`.
-
-## What is NOT in this repo
-
-- **`auth.json`**: Holds the actual API key. Never committed.
-- **`sessions/`**: Conversation logs, can contain personal data.
-- **`npm/`**: `node_modules` for the installed packages, ~285 MB, regenerated
-  from `packages.json` on first run.
-- **`bin/fd`, `bin/rg`**: Pre-built arm64 binaries, machine-specific.
-- **`trust.json`**: Per-machine trust decisions for project directories.
-
-## Status
-
-Maintained by hand. I edit `settings.json` and the extension source files
-directly, then commit the result. No automation, no installer.

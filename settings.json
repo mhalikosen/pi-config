@@ -2,10 +2,13 @@
   "defaultProvider": "minimax",
   "defaultModel": "MiniMax-M3",
   "defaultThinkingLevel": "high",
-  "theme": "light",
+  "theme": "light/dark",
   "packages": [
-    "npm:pi-web-access",
-    "npm:@sinamtz/pi-minimax-provider"
+    "npm:@sinamtz/pi-minimax-provider",
+    "git:github.com/jo-inc/pi-mem",
+    "git:github.com/jo-inc/pi-reflect",
+    "git:github.com/skyfallsin/pi-room",
+    "git:github.com/skyfallsin/pi-boss"
   ],
   "hideThinkingBlock": true,
   "terminal": {

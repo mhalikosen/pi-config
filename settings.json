@@ -1,6 +1,6 @@
 {
-  "defaultProvider": "minimax",
-  "defaultModel": "MiniMax-M3",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.2",
   "defaultThinkingLevel": "high",
   "theme": "light/dark",
   "packages": [
@@ -8,7 +8,8 @@
     "git:github.com/jo-inc/pi-mem",
     "git:github.com/jo-inc/pi-reflect",
     "git:github.com/skyfallsin/pi-room",
-    "git:github.com/skyfallsin/pi-boss"
+    "git:github.com/skyfallsin/pi-boss",
+    "npm:pi-zai-mcp"
   ],
   "hideThinkingBlock": true,
   "terminal": {

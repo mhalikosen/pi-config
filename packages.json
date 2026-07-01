@@ -1,3 +1,4 @@
 {
-  "@sinamtz/pi-minimax-provider": "1.1.5"
+  "@sinamtz/pi-minimax-provider": "1.1.5",
+  "pi-zai-mcp": "0.1.15"
 }

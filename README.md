@@ -12,10 +12,12 @@ pi-config/
 ├── README.md
 ├── settings.json       # fields I changed vs pi's defaults (delta only)
 ├── packages.json       # npm packages I install on top of pi
-└── extensions/
-    ├── exit-on-text.ts
-    ├── model-tools-sync.ts
-    └── usage-tracker.ts
+├── extensions/
+│   ├── exit-on-text.ts
+│   ├── model-tools-sync.ts
+│   └── usage-tracker.ts
+└── examples/
+    └── safari-mcp.md   # end-to-end pi-mcp-extension + Safari sample
 ```
 
 ## `settings.json`
@@ -26,14 +28,20 @@ file as a delta so that any new default pi introduces in a future release
 takes effect on a fresh clone without me having to mirror the change here.
 
 | Field | Value | pi default |
-|---|---|---|
-| `defaultProvider` | `zai` | unset |
-| `defaultModel` | `glm-5.2` | unset |
+| --- | --- | --- |
+| `defaultProvider` | `minimax` | unset |
+| `defaultModel` | `MiniMax-M3` | unset |
 | `defaultThinkingLevel` | `high` | unset |
+| `compaction.enabled` | `true` | unset |
 | `theme` | `light/dark` | `dark` |
 | `packages` | see below | `[]` |
 | `hideThinkingBlock` | `true` | `false` |
 | `terminal.showTerminalProgress` | `true` | `false` |
+| `steeringMode` | `one-at-a-time` | unset |
+| `followUpMode` | `one-at-a-time` | unset |
+| `transport` | `auto` | unset |
+| `enableInstallTelemetry` | `true` | unset |
+| `defaultProjectTrust` | `ask` | unset |
 | `warnings.anthropicExtraUsage` | `false` | `true` |
 
 ### `packages`
@@ -43,9 +51,11 @@ Mixed npm and git pi-packages, referenced exactly as they appear in
 `packages.json`; git packages are fetched on demand by pi from the URLs below.
 
 | Package | Source | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `@sinamtz/pi-minimax-provider` | `npm` (`1.1.5`) | Provider for the MiniMax Coding Plan API |
 | `pi-zai-mcp` | `npm` (`0.1.15`) | Z.ai web/reader/zread/vision tools as MCP-backed provider tools |
+| `pi-mcp-extension` | `npm` (`1.5.0`) | Generic MCP client (stdio / streamable-http / sse); required for the Safari example |
+| `pi-lens` | `npm` (`3.8.65`) | AST + LSP code intelligence (read, search, diagnostics, navigation) |
 | `pi-mem` | `git` (`jo-inc/pi-mem`) | Persistent agent memory |
 | `pi-reflect` | `git` (`jo-inc/pi-reflect`) | Self-improving behavioral files |
 | `pi-room` | `git` (`skyfallsin/pi-room`) | Multi-agent room |
@@ -58,9 +68,11 @@ Versions are pinned to what is currently running on my machine so the
 reference is reproducible; bump them when upgrading pi.
 
 | Package | Version |
-|---|---|
+| --- | --- |
 | `@sinamtz/pi-minimax-provider` | `1.1.5` |
 | `pi-zai-mcp` | `0.1.15` |
+| `pi-mcp-extension` | `1.5.0` |
+| `pi-lens` | `3.8.65` |
 
 ## `extensions/`
 
@@ -92,3 +104,12 @@ function that calls `pi.on(...)` or `pi.registerCommand(...)`.
   `ok`. Reads the API key from `~/.pi/agent/auth.json` first, then falls back
   to `MINIMAX_API_KEY` / `ZAI_API_KEY` (`GLM_API_KEY` as Zhipu legacy).
   Supersedes the single-provider `minimax-usage.ts`.
+
+## `examples/`
+
+Walk-throughs that stitch the pieces above together. Pure documentation, no
+code executed by pi at startup.
+
+- **`safari-mcp.md`**: Connect `pi-mcp-extension` to Safari via the
+  WebDriver `--mcp` flag, list the bridged tools, and drive a real page from a
+  pi session.

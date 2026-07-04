@@ -1,4 +1,6 @@
 {
   "@sinamtz/pi-minimax-provider": "1.1.5",
-  "pi-zai-mcp": "0.1.15"
+  "pi-zai-mcp": "0.1.15",
+  "pi-mcp-extension": "1.5.0",
+  "pi-lens": "3.8.65"
 }

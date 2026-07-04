@@ -1,7 +1,10 @@
 {
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.2",
+  "defaultProvider": "minimax",
+  "defaultModel": "MiniMax-M3",
   "defaultThinkingLevel": "high",
+  "compaction": {
+    "enabled": true
+  },
   "theme": "light/dark",
   "packages": [
     "npm:@sinamtz/pi-minimax-provider",
@@ -9,12 +12,19 @@
     "git:github.com/jo-inc/pi-reflect",
     "git:github.com/skyfallsin/pi-room",
     "git:github.com/skyfallsin/pi-boss",
-    "npm:pi-zai-mcp"
+    "npm:pi-zai-mcp",
+    "npm:pi-mcp-extension",
+    "npm:pi-lens"
   ],
   "hideThinkingBlock": true,
   "terminal": {
     "showTerminalProgress": true
   },
+  "steeringMode": "one-at-a-time",
+  "followUpMode": "one-at-a-time",
+  "transport": "auto",
+  "enableInstallTelemetry": true,
+  "defaultProjectTrust": "ask",
   "warnings": {
     "anthropicExtraUsage": false
   }

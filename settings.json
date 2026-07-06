@@ -13,8 +13,7 @@
     "git:github.com/skyfallsin/pi-room",
     "git:github.com/skyfallsin/pi-boss",
     "npm:pi-zai-mcp",
-    "npm:pi-mcp-extension",
-    "npm:pi-lens"
+    "npm:pi-mcp-extension"
   ],
   "hideThinkingBlock": true,
   "terminal": {

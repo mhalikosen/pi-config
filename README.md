@@ -55,7 +55,6 @@ Mixed npm and git pi-packages, referenced exactly as they appear in
 | `@sinamtz/pi-minimax-provider` | `npm` (`1.1.5`) | Provider for the MiniMax Coding Plan API |
 | `pi-zai-mcp` | `npm` (`0.1.15`) | Z.ai web/reader/zread/vision tools as MCP-backed provider tools |
 | `pi-mcp-extension` | `npm` (`1.5.0`) | Generic MCP client (stdio / streamable-http / sse); required for the Safari example |
-| `pi-lens` | `npm` (`3.8.65`) | AST + LSP code intelligence (read, search, diagnostics, navigation) |
 | `pi-mem` | `git` (`jo-inc/pi-mem`) | Persistent agent memory |
 | `pi-reflect` | `git` (`jo-inc/pi-reflect`) | Self-improving behavioral files |
 | `pi-room` | `git` (`skyfallsin/pi-room`) | Multi-agent room |
@@ -72,7 +71,6 @@ reference is reproducible; bump them when upgrading pi.
 | `@sinamtz/pi-minimax-provider` | `1.1.5` |
 | `pi-zai-mcp` | `0.1.15` |
 | `pi-mcp-extension` | `1.5.0` |
-| `pi-lens` | `3.8.65` |
 
 ## `extensions/`
 

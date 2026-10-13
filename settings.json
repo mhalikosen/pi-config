@@ -10,8 +10,7 @@
     "npm:@sinamtz/pi-minimax-provider",
     "git:github.com/jo-inc/pi-mem",
     "git:github.com/jo-inc/pi-reflect",
-    "git:github.com/skyfallsin/pi-room",
-    "git:github.com/skyfallsin/pi-boss",
+    "npm:@tintinweb/pi-subagents",
     "npm:pi-zai-mcp",
     "npm:pi-mcp-extension"
   ],

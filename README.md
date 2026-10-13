@@ -57,18 +57,22 @@ Mixed npm and git pi-packages, referenced exactly as they appear in
 | `pi-mcp-extension` | `npm` (`1.5.0`) | Generic MCP client (stdio / streamable-http / sse); required for the Safari example |
 | `pi-mem` | `git` (`jo-inc/pi-mem`) | Persistent agent memory |
 | `pi-reflect` | `git` (`jo-inc/pi-reflect`) | Self-improving behavioral files |
-| `pi-room` | `git` (`skyfallsin/pi-room`) | Multi-agent room |
-| `pi-boss` | `git` (`skyfallsin/pi-boss`) | Boss orchestration |
+| `@tintinweb/pi-subagents` | `npm` (`0.21.0`) | Sub-agents and workflow orchestration: parallel background agents, mid-run steering, worktree isolation, scripted workflows |
+
+`pi-boss` and its `pi-room` dependency were dropped on 2026-10-13. Both stopped
+on 2026-04-25 and still declare the pre-rename `@mariozechner/pi-coding-agent`
+peer; `@tintinweb/pi-subagents` does the same work without tmux.
 
 ## `packages.json`
 
-npm packages installed into `~/.pi/agent/npm/` via `pi add-package <name>`.
+npm packages installed into `~/.pi/agent/npm/` via `pi install npm:<name>`.
 Versions are pinned to what is currently running on my machine so the
 reference is reproducible; bump them when upgrading pi.
 
 | Package | Version |
 | --- | --- |
 | `@sinamtz/pi-minimax-provider` | `1.1.5` |
+| `@tintinweb/pi-subagents` | `0.21.0` |
 | `pi-zai-mcp` | `0.1.15` |
 | `pi-mcp-extension` | `1.5.0` |
 

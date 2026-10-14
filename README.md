@@ -15,7 +15,8 @@ pi-config/
 ├── extensions/
 │   ├── exit-on-text.ts
 │   ├── model-tools-sync.ts
-│   └── usage-tracker.ts
+│   ├── usage-tracker.ts
+│   └── web-tools.ts
 └── examples/
     └── safari-mcp.md   # end-to-end pi-mcp-extension + Safari sample
 ```
@@ -106,6 +107,18 @@ function that calls `pi.on(...)` or `pi.registerCommand(...)`.
   `ok`. Reads the API key from `~/.pi/agent/auth.json` first, then falls back
   to `MINIMAX_API_KEY` / `ZAI_API_KEY` (`GLM_API_KEY` as Zhipu legacy).
   Supersedes the single-provider `minimax-usage.ts`.
+- **`web-tools.ts`**: Registers `web_search` and `web_fetch`. When the selected
+  model belongs to the `anthropic` provider, both run on Anthropic's server
+  tools (`web_search_20260318`, `web_fetch_20260318`) with that provider's
+  credentials. Search is relayed through the selected model, fetch through
+  `claude-haiku-5-5`, and the text the agent receives comes from the raw tool
+  results. Every other provider, Claude models served through OpenRouter
+  included, uses OpenRouter's server tools (`openrouter:web_search` with Exa,
+  `openrouter:web_fetch`). An Anthropic failure falls back to OpenRouter, and
+  `details.fallbackReason` records why. `WEB_TOOLS_BACKEND=openrouter` turns
+  Anthropic off; `WEB_TOOLS_SEARCH_MODEL` and `WEB_TOOLS_FETCH_MODEL` choose
+  other relay models. PDFs are not extracted by either backend. The copy pi
+  loads is a symlink from `~/.pi/agent/extensions/` to this file.
 
 ## `examples/`
 
